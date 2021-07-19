@@ -18,7 +18,7 @@ file = pd.read_csv(r'./valeursfoncieres-2020.txt', delimiter='|')
 # Ecrit un fichier au format CSV à la racine du dossier ou se trouve le script nommé 'data[.csv]' :
 file.to_csv(r'./data.csv')
 
-NB: Attention les chemins sont relatifs
+# Attention les chemins sont relatifs
 ```
 
 ### Dictionnaire de données

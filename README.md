@@ -7,6 +7,7 @@ On remarque un caractère réccurent (`|`) qui symbolise la séparation des donn
 
 Pour caster ces données au bon format, vous pouvez utiliser ce script python :
 
+> Extrait du fichier `./data/script_to_csv.py`
 ```python
 # pip install pandas
 import pandas as pd
@@ -51,7 +52,7 @@ Spécifications techniques liées au choix du SGBDR (Système de Gestion de Base
 - [Optionel] [pg_admin](https://www.pgadmin.org/) : Open Source administration and development platform for PostgreSQL
 
 ### Creation d'un user et da la BDD
-Extrait du fichier `./database/create_role_and_database.sql`
+> Extrait du fichier `./database/create_role_and_database.sql`
 
 ```sql
 -- Initial creation of the database and it's owner
@@ -71,10 +72,10 @@ GRANT ALL PRIVILEGES ON DATABASE immo_db TO "immo_admin";
 ```
 
 ### Création des tables
-Extrait du fichier `./database/create_tables.sql`
+> Extrait du fichier `./database/create_tables.sql`
 
 ### Import des données
-Extrait du fichier `./database/seed.sql`
+> Extrait du fichier `./database/seed.sql`
 
 ## Cas d'étude
 

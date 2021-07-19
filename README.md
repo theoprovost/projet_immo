@@ -37,6 +37,7 @@ file.to_csv(r'./data.csv')
 Pistes de réflexion sur le dictionnaire :
 - type float : vérifier poids vis à vis d'un int
 - Verifier si différences entre 0 et Null (universel, dépendant au SGBDR ?)
+- Ajouter nom de commune dans le dataset ? (cf. commune)
 
 ### MCD (Modèle Conceptuel de Données)
 

@@ -11,4 +11,5 @@ DROP DATABASE IF EXISTS immo_db;
 CREATE DATABASE immo_db;
 
 -- Give privelegies to the role created just before
+GRANT CONNECT ON DATABASE immo_db TO "immo_admin";
 GRANT ALL PRIVILEGES ON DATABASE immo_db TO "immo_admin";

@@ -2,3 +2,4 @@ data/data.csv
 data/valeursfoncieres-2020.txt
 .DS_Store
 .ipynb_checkpoints
+./data/data_head.csv

@@ -10,7 +10,7 @@ CREATE TABLE commune (
 );
 
 CREATE TABLE localisation (
-    code_postal INT,
+    code_postal VARCHAR(255),
     code_departement VARCHAR(255) NOT NULL,
     code_commune VARCHAR(255) NOT NULL,
 
@@ -22,7 +22,7 @@ CREATE TABLE bien (
     code_type_local INT,
     surface_reel_bati INT,
     nb_pieces_principales INT,
-    code_postal INT NULL,
+    code_postal VARCHAR(255) NULL,
     FOREIGN KEY(code_postal) REFERENCES localisation(code_postal)
 );
 

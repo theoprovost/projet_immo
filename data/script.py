@@ -1,12 +1,13 @@
 # pip install pandas
 import csv
 import psycopg2
+import numpy as np
 import pandas as pd
 
 
 def process_data():
     df = pd.read_csv(r'./data/valeursfoncieres-2020.txt',
-                     delimiter='|', decimal=',', na_values='')
+                     delimiter='|', decimal=',', na_values='', quoting=csv.QUOTE_NONNUMERIC)
     columns = [
         'Date mutation',  # indice 0
         'Valeur fonciere',  # 1
@@ -19,6 +20,7 @@ def process_data():
         'Commune'  # 8
     ]
     df = df[columns]
+
     int_columns = [df.columns.difference(
         ['Date mutation', 'Commune', 'Code departement', 'Valeur fonciere'])]
     for col in int_columns:
@@ -28,11 +30,9 @@ def process_data():
             .astype(object)
             .where(df[col].notnull())
         )
-    # df.drop((df[df['Code postal'] != '']).index)
+
     df.to_csv(r'./data/data.csv', index=False)
-
-
-# pip install psycopg2
+    print(f'File was stored : ./data/data.csv')
 
 
 def connect():
@@ -78,7 +78,7 @@ def queries():
 
             x += 1
             print(x)
-            if x == 100000:
+            if x == 1000:
                 cur.close()
                 conn.close()
                 exit()
@@ -95,18 +95,18 @@ conn = connect()
 cur = conn.cursor()
 
 
-######
-cur.execute(
-    "SELECT * FROM localisation JOIN commune on localisation.code_commune=commune.code_commune WHERE localisation.code_postal='1000000'"
-)
-l = cur.fetchall()
+# TESTS BELOW
+# cur.execute(
+#     "SELECT * FROM localisation JOIN commune on localisation.code_commune=commune.code_commune WHERE localisation.code_postal='1000000'"
+# )
+# l = cur.fetchall()
 
-gouv_cp_API_base = 'https://geo.api.gouv.fr/communes?nom='
+# gouv_cp_API_base = 'https://geo.api.gouv.fr/communes?nom='
 
 
-def complete_cp(list=[]):
-    for x in list:
-        print(x)
+# def complete_cp(list=[]):
+#     for x in list:
+#         print(x)
 
 
 # complete_cp(l)

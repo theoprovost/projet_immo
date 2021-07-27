@@ -7,7 +7,7 @@ import pandas as pd
 
 def process_data():
     df = pd.read_csv(r'./data/valeursfoncieres-2020.txt',
-                     delimiter='|', decimal=',', na_values='', quoting=csv.QUOTE_NONNUMERIC)
+                     delimiter='|', decimal=',', na_values='', quoting=csv.QUOTE_NONNUMERIC, engine='python')
     columns = [
         'Date mutation',  # indice 0
         'Valeur fonciere',  # 1
@@ -78,7 +78,7 @@ def queries():
 
             x += 1
             print(x)
-            if x == 1000:
+            if x == 200000:
                 cur.close()
                 conn.close()
                 exit()

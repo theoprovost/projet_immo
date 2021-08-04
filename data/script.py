@@ -78,10 +78,10 @@ def queries():
 
             x += 1
             print(x)
-            if x == 200000:
-                cur.close()
-                conn.close()
-                exit()
+            # if x == 200000:
+            #     cur.close()
+            #     conn.close()
+            #     exit()
 
     cur.close()
     conn.close()
